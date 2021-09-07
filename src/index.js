@@ -3,9 +3,9 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const Filter = require('bad-words');
-const {generateMessage,generateLoc} = require('./src/utils/messages');
-const {addUser,removeUser,getUser,getUserInRoom}=require('./src/utils/users')
-const forecast = require('./public/js/forecast');
+const {generateMessage,generateLoc} = require('./utils/messages');
+const {addUser,removeUser,getUser,getUserInRoom}=require('./utils/users')
+const forecast = require('../public/js/forecast');
 const { ExpressPeerServer } = require("peer");
 
 
@@ -130,4 +130,5 @@ io.on('connection',(socket)=>{
 
 server.listen(port,()=>{
     console.log('Server is UP');
+    console.log(port)
 }) 
